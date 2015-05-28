@@ -2,7 +2,7 @@ package jeckelfoodmod.core;
 
 import jeckelfoodmod.common.UpdateChecker;
 import jeckelfoodmod.common.configs.ConfigHandler;
-import jeckelfoodmod.compatibility.CFMGapRecipeRegistry;
+import jeckelfoodmod.compatibility.CFMVanillaRecipeRegistry;
 import jeckelfoodmod.compatibility.CFMModRecipeRegistry;
 import jeckelfoodmod.content.ContentManager;
 import net.minecraft.server.MinecraftServer;
@@ -67,8 +67,8 @@ public class Refs
 		_contentManager.initialize();
 		if (Loader.isModLoaded("cfm"))
 		{
-			if (!Loader.isModLoaded("cfmvanillaaddon")) { CFMGapRecipeRegistry.send(); }
 			CFMModRecipeRegistry.send();
+			if (!Loader.isModLoaded("cfmvanillaaddon")) { CFMVanillaRecipeRegistry.send(); }
 		}
 	}
 

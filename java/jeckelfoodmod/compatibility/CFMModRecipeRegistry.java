@@ -6,7 +6,6 @@ import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 
 import com.mrcrayfish.furniture.api.IRecipeRegistry;
-import com.mrcrayfish.furniture.api.RecipeVariables;
 
 import cpw.mods.fml.common.event.FMLInterModComms;
 
@@ -21,51 +20,26 @@ public class CFMModRecipeRegistry
 
 	public static void initialize(IRecipeRegistry registry)
 	{
-		RecipeVariables var;
+		ItemStack input, output;
 
-		var = new RecipeVariables();
-		var.addValue("input", new ItemStack(Items.egg));
-		var.addValue("output", new ItemStack(ContentManager.ModItems.egg_fried));
-		registry.registerRecipe("oven", var);
-		var = new RecipeVariables();
-		var.addValue("input", new ItemStack(Items.egg));
-		var.addValue("output", new ItemStack(ContentManager.ModItems.egg_fried));
-		registry.registerRecipe("microwave", var);
+		input = new ItemStack(Items.egg);
+		output = new ItemStack(ContentManager.ModItems.egg_fried);
+		CFMUtil.register(registry, input, output, "oven", "microwave");
 
-		var = new RecipeVariables();
-		var.addValue("input", new ItemStack(Items.carrot));
-		var.addValue("output", new ItemStack(ContentManager.ModItems.carrot_cooked));
-		registry.registerRecipe("oven", var);
-		var = new RecipeVariables();
-		var.addValue("input", new ItemStack(Items.carrot));
-		var.addValue("output", new ItemStack(ContentManager.ModItems.carrot_cooked));
-		registry.registerRecipe("microwave", var);
+		input = new ItemStack(Items.carrot);
+		output = new ItemStack(ContentManager.ModItems.carrot_cooked);
+		CFMUtil.register(registry, input, output, "oven", "microwave");
 
-		var = new RecipeVariables();
-		var.addValue("input", new ItemStack(Items.pumpkin_pie));
-		var.addValue("output", new ItemStack(ContentManager.ModItems.pumpkin_pie_baked));
-		registry.registerRecipe("oven", var);
-		var = new RecipeVariables();
-		var.addValue("input", new ItemStack(Items.pumpkin_pie));
-		var.addValue("output", new ItemStack(ContentManager.ModItems.pumpkin_pie_baked));
-		registry.registerRecipe("microwave", var);
+		input = new ItemStack(Items.pumpkin_pie);
+		output = new ItemStack(ContentManager.ModItems.pumpkin_pie_baked);
+		CFMUtil.register(registry, input, output, "oven", "microwave");
 
-		var = new RecipeVariables();
-		var.addValue("input", new ItemStack(ContentManager.ModItems.apple_pie));
-		var.addValue("output", new ItemStack(ContentManager.ModItems.apple_pie_baked));
-		registry.registerRecipe("oven", var);
-		var = new RecipeVariables();
-		var.addValue("input", new ItemStack(ContentManager.ModItems.apple_pie));
-		var.addValue("output", new ItemStack(ContentManager.ModItems.apple_pie_baked));
-		registry.registerRecipe("microwave", var);
+		input = new ItemStack(ContentManager.ModItems.apple_pie);
+		output = new ItemStack(ContentManager.ModItems.apple_pie_baked);
+		CFMUtil.register(registry, input, output, "oven", "microwave");
 
-		var = new RecipeVariables();
-		var.addValue("input", new ItemStack(ContentManager.ModItems.melon_pie));
-		var.addValue("output", new ItemStack(ContentManager.ModItems.melon_pie_baked));
-		registry.registerRecipe("oven", var);
-		var = new RecipeVariables();
-		var.addValue("input", new ItemStack(ContentManager.ModItems.melon_pie));
-		var.addValue("output", new ItemStack(ContentManager.ModItems.melon_pie_baked));
-		registry.registerRecipe("microwave", var);
+		input = new ItemStack(ContentManager.ModItems.melon_pie);
+		output = new ItemStack(ContentManager.ModItems.melon_pie_baked);
+		CFMUtil.register(registry, input, output, "oven", "microwave");
 	}
 }
